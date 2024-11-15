@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Quality Detection</title>
+</head>
+<body>
+    <h1>Oil Quality Detection System</h1>
+    <form action="/predict" method="post">
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" id="temperature" name="temperature" required><br><br>
+
+        <label for="capacity">Capacity (ml):</label>
+        <input type="text" id="capacity" name="capacity" required><br><br>
+
+        <label for="color">Color (scale 1-10):</label>
+        <input type="text" id="color" name="color" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
